@@ -2,6 +2,7 @@
     <div>
      <h3>Money needed: </h3>
      <h3>Money saved: </h3>
+     <p>Test</p>
     
     </div>
   </template>
