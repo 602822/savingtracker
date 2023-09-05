@@ -2,6 +2,9 @@
   <h1>Saving Tracker</h1>
   <DisplayMoney />
   <EditGoalModal @close="showModal = false" v-if="showModal"></EditGoalModal>
+  <p>Money Saved Today:</p>
+  <input />
+  <button>Save</button>
   <button @click="showModal = true">Edit Goal</button>
 </template>
 
@@ -11,6 +14,7 @@ import EditGoalModal from "./components/EditGoalModal.vue";
 import DisplayMoney from "./components/DisplayMoney.vue";
 
 const showModal = ref<boolean>(false);
+const moneySaved = ref<number>(0);
 </script>
 
 <style>
