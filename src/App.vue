@@ -1,19 +1,16 @@
 <template>
   <h1>Saving Tracker</h1>
-  <displayMoney/>
+  <DisplayMoney />
+  <EditGoalModal @close="showModal = false" v-if="showModal"></EditGoalModal>
+  <button @click="showModal = true">Edit Goal</button>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-import displayMoney from "./components/displayMoney.vue"
+<script setup lang="ts">
+import { ref } from "vue";
+import EditGoalModal from "./components/EditGoalModal.vue";
+import DisplayMoney from "./components/DisplayMoney.vue";
 
-
-export default defineComponent({
-  name: 'App',
-  components: {
-  displayMoney
-  }
-});
+const showModal = ref<boolean>(false);
 </script>
 
 <style>
