@@ -16,11 +16,11 @@ import DisplayMoney from "./components/DisplayMoney.vue";
 import SavingGoal from "./components/SavingGoal.vue";
 
 const showModal = ref<boolean>(false);
-const moneySavedToday = ref<number>(0);
+const moneySavedToday = ref<string | number>("");
 const moneySavedTotal = ref<number>(0);
 
 const saveMoney = () => {
-  moneySavedTotal.value += moneySavedToday.value;
+  moneySavedTotal.value += Number(moneySavedToday.value);
   console.log("Money Saved: ", moneySavedTotal);
 };
 </script>

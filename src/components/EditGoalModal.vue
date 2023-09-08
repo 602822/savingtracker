@@ -20,7 +20,7 @@ import { ref, defineEmits } from "vue";
 import {useStore} from 'vuex'
 
 const savingGoal = ref<string>("");
-const moneyNeeded = ref<number>(0);
+const moneyNeeded = ref<string | number>("");
 
 const emit = defineEmits(["close"]);
 
