@@ -1,9 +1,10 @@
 <template>
   <h1>Saving Tracker</h1>
   <DisplayMoney :moneySavedTotal="moneySavedTotal" />
+  <SavingGoal/>
   <EditGoalModal @close="showModal = false" v-if="showModal" />
   <p>Money Saved Today:</p>
-  <input v-model="moneySavedToday" type="number" />
+  <input v-model="moneySavedToday" />
   <button @click="saveMoney()">Save</button>
   <button @click="showModal = true">Edit Goal</button>
 </template>
@@ -12,6 +13,7 @@
 import { ref } from "vue";
 import EditGoalModal from "./components/EditGoalModal.vue";
 import DisplayMoney from "./components/DisplayMoney.vue";
+import SavingGoal from "./components/SavingGoal.vue";
 
 const showModal = ref<boolean>(false);
 const moneySavedToday = ref<number>(0);

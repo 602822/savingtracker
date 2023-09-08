@@ -9,7 +9,7 @@
         <input class="input" v-model="savingGoal" />
         <p>Enter how much money you need:</p>
         <input class="input" v-model.number="moneyNeeded" />
-        <button class="button">Save</button>
+        <button @click="save"  class="button">Save</button>
       </div>
     </div>
   </div>
@@ -17,6 +17,7 @@
 
 <script setup lang="ts">
 import { ref, defineEmits } from "vue";
+import {useStore} from 'vuex'
 
 const savingGoal = ref<string>("");
 const moneyNeeded = ref<number>(0);
@@ -26,6 +27,14 @@ const emit = defineEmits(["close"]);
 function closeModal() {
   emit("close");
 }
+
+const store = useStore();
+
+const save = () => {
+  store.commit('setSavingGoal', savingGoal)
+  store.commit('setMoneyNeeded', moneyNeeded )
+}
+
 </script>
 
 <style>

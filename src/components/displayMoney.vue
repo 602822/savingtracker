@@ -6,11 +6,19 @@
 </template>
 
 <script setup lang="ts">
-import { ref, defineProps } from "vue";
+import {defineProps, computed } from "vue";
+import {useStore} from "vuex";
 
 const props = defineProps({
   moneySavedTotal: { type: Number },
 });
 
-const moneyNeeded = ref<number>(0);
+const store = useStore();
+const moneyNeeded = computed(() => store.state.moneyNeeded)
+
+
+
+
+
+
 </script>
