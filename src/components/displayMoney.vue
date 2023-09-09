@@ -6,19 +6,13 @@
 </template>
 
 <script setup lang="ts">
-import {defineProps, computed } from "vue";
-import {useStore} from "vuex";
+import { defineProps, computed } from "vue";
+import { useStore } from "vuex";
 
 const props = defineProps({
   moneySavedTotal: { type: Number },
 });
 
 const store = useStore();
-const moneyNeeded = computed(() => store.state.moneyNeeded)
-
-
-
-
-
-
+const moneyNeeded = computed(() => store.state.moneyNeeded);
 </script>

@@ -9,18 +9,24 @@
         <input class="input" v-model="savingGoal" />
         <p>Enter how much money you need:</p>
         <input class="input" v-model.number="moneyNeeded" />
-        <button @click="save"  class="button">Save</button>
+        <p>Image:</p>
+        <input type="file" @change="onImageSelected" />
+        <button @click="save" class="button">Save</button>
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, defineEmits } from "vue";
-import {useStore} from 'vuex'
+import { ref, defineEmits} from "vue";
+import { useStore } from "vuex";
 
 const savingGoal = ref<string>("");
 const moneyNeeded = ref<string | number>("");
+
+const store = useStore();
+
+const selectedImage = ref<string | null>(null);
 
 const emit = defineEmits(["close"]);
 
@@ -28,13 +34,29 @@ function closeModal() {
   emit("close");
 }
 
-const store = useStore();
+const onImageSelected = (event: Event) => {
+  const fileInput = event.target as HTMLInputElement;
+  const files = fileInput.files;
+
+  if (files && files.length > 0) {
+    const file = files[0];
+
+    const reader = new FileReader();
+
+    reader.onload = (e) => {
+      selectedImage.value = e.target?.result as string;
+
+      store.commit("setImageUrl", selectedImage.value);
+    };
+
+    reader.readAsDataURL(file);
+  }
+};
 
 const save = () => {
-  store.commit('setSavingGoal', savingGoal)
-  store.commit('setMoneyNeeded', moneyNeeded )
-}
-
+  store.commit("setSavingGoal", savingGoal);
+  store.commit("setMoneyNeeded", moneyNeeded);
+};
 </script>
 
 <style>
