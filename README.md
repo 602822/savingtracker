@@ -1,5 +1,5 @@
 # savingtracker
-You can run the app by cloning the project from github to vscode and use npm run serve with the integrated terminal. Make sure you have node, npm and vue cli
+You can run the app by cloning the project from github to vscode and use "npm run serve" in the integrated terminal. Make sure you have node, npm and vue cli
 
 ## Project setup
 ```
