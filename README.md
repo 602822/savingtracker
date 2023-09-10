@@ -1,10 +1,5 @@
 # savingtracker
-Requirements to run: 
-vue cli,
-node,
-npm
-
-You can run the app using: npm run serve
+You can run the app by cloning the project from github to vscode and use npm run serve with the integrated terminal. Make sure you have node, npm and vue cli
 
 ## Project setup
 ```
