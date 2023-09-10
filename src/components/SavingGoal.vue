@@ -14,7 +14,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from "vue";
+import { computed, ref, watch } from "vue";
 import { useStore } from "vuex";
 import ProgressBar from "./ProgressBar.vue";
 
@@ -22,7 +22,15 @@ const store = useStore();
 const savingGoal = computed(() => store.state.savingGoal);
 const imageUrl = computed(() => store.state.selectedImageUrl);
 
-const progress = ref(50);
+const moneyNeeded = computed(() => store.state.moneyNeeded);
+const moneySaved = computed(() => store.state.moneySaved);
+let progress = ref(0);
+
+const calculateProgress = () => {
+  progress.value = Math.round((moneySaved.value / moneyNeeded.value) * 100);
+};
+
+watch([moneySaved, moneyNeeded], calculateProgress);
 </script>
 
 <style scoped>

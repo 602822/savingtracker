@@ -1,7 +1,7 @@
 <template>
   <h1>Saving Tracker</h1>
   <DisplayMoney :moneySavedTotal="moneySavedTotal" />
-  <SavingGoal/>
+  <SavingGoal />
   <EditGoalModal @close="showModal = false" v-if="showModal" />
   <p>Money Saved Today:</p>
   <input v-model="moneySavedToday" />
@@ -10,18 +10,21 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { computed, ref } from "vue";
 import EditGoalModal from "./components/EditGoalModal.vue";
 import DisplayMoney from "./components/DisplayMoney.vue";
 import SavingGoal from "./components/SavingGoal.vue";
+import { useStore } from "vuex";
 
 const showModal = ref<boolean>(false);
 const moneySavedToday = ref<string | number>("");
-const moneySavedTotal = ref<number>(0);
+const moneySavedTotal = computed(() => store.state.moneySaved);
+
+const store = useStore();
 
 const saveMoney = () => {
-  moneySavedTotal.value += Number(moneySavedToday.value);
   console.log("Money Saved: ", moneySavedTotal);
+  store.commit("addMoneySaved", Number(moneySavedToday.value));
 };
 </script>
 

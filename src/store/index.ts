@@ -4,12 +4,14 @@ interface RootState {
 savingGoal : string;
 moneyNeeded : number;
 selectedImageUrl : string;
+moneySaved: number;
 }
 
 const store : Store<RootState> = createStore({
     state: {savingGoal: 'Enter your Saving Goal',
     moneyNeeded: 0,
     selectedImageUrl: "",
+    moneySaved: 0,
 
 },
     mutations: {setSavingGoal(state, newGoal:string) {
@@ -21,6 +23,10 @@ const store : Store<RootState> = createStore({
 
  setImageUrl (state, imageUrl) {
     state.selectedImageUrl = imageUrl
+ },
+
+ addMoneySaved(state, moneySaved) {
+    state.moneySaved += moneySaved
  },
 
 },
