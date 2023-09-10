@@ -1,4 +1,10 @@
 # savingtracker
+Requirements to run: 
+vue cli
+node
+npm
+
+You can run the app using: npm run serve
 
 ## Project setup
 ```
