@@ -1,7 +1,7 @@
 # savingtracker
 Requirements to run: 
-vue cli
-node
+vue cli,
+node,
 npm
 
 You can run the app using: npm run serve
