@@ -2,14 +2,13 @@
   <div>
     <img v-if="imageUrl" :src="imageUrl" alt="User selected Image" />
     <img v-else src="../assets/noImage.jpg" alt="No image selected" />
+    <p>{{ savingGoal }}</p>
     <div class="progress">
       <ProgressBar :progress="progress" />
       <div class="precentage">
         <p>{{ progress }}%</p>
       </div>
     </div>
-
-    <p>{{ savingGoal }}</p>
   </div>
 </template>
 
@@ -37,6 +36,7 @@ watch([moneySaved, moneyNeeded], calculateProgress);
 .progress {
   display: flex;
   align-items: center;
+  margin-left: 300px;
 }
 
 .precentage {

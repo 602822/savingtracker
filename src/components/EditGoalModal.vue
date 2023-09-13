@@ -18,7 +18,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, defineEmits} from "vue";
+import { ref, defineEmits } from "vue";
 import { useStore } from "vuex";
 
 const savingGoal = ref<string>("");
@@ -79,7 +79,7 @@ const save = () => {
   display: flex;
   flex-direction: column;
   width: 300px;
-  height: 300px;
+  height: 320px;
   position: relative;
 }
 

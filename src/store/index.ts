@@ -17,15 +17,15 @@ const store : Store<RootState> = createStore({
     mutations: {setSavingGoal(state, newGoal:string) {
     state.savingGoal = newGoal
     },
- setMoneyNeeded(state, moneyNeeded) {
+ setMoneyNeeded(state, moneyNeeded: number) {
     state.moneyNeeded = moneyNeeded
  },
 
- setImageUrl (state, imageUrl) {
+ setImageUrl (state, imageUrl:string) {
     state.selectedImageUrl = imageUrl
  },
 
- addMoneySaved(state, moneySaved) {
+ addMoneySaved(state, moneySaved : number) {
     state.moneySaved += moneySaved
  },
 
