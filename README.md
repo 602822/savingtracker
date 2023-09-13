@@ -1,5 +1,14 @@
 # savingtracker
 You can run the app by cloning the project from github to vscode and use "npm install" and "npm run serve" in the integrated terminal. Make sure you have node and npm
+npm 
+
+dependencies:
+npm install vuex
+
+
+
+
+
 
 ## Project setup
 ```
