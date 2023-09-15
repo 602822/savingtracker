@@ -1,5 +1,8 @@
 <template>
-  <h1>Saving Tracker</h1>
+  <div class="header">
+    <h1>Saving Tracker</h1>
+    <img src="./assets/piggyBankIcon.png" alt="piggybankIcon" class="icon" />
+  </div>
   <DisplayMoney :moneySavedTotal="moneySavedTotal" />
   <ConfettiExplosion :duration="5000" v-if="showConfetti"></ConfettiExplosion>
   <SavingGoal />
@@ -53,5 +56,16 @@ input {
 
 button {
   margin-bottom: 10px;
+}
+
+img.icon {
+  width: 50px;
+  height: 50px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 </style>

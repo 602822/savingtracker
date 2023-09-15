@@ -48,4 +48,9 @@ watch(progress, (newProgress) => {
   padding-top: 29px;
   margin: 0; /* Remove default paragraph margins */
 }
+
+img {
+  height: 183px;
+  width: 275px;
+}
 </style>
