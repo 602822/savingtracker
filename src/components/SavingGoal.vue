@@ -2,7 +2,9 @@
   <div>
     <img v-if="imageUrl" :src="imageUrl" alt="User selected Image" />
     <img v-else src="../assets/noImage.jpg" alt="No image selected" />
-    <p>{{ savingGoal }}</p>
+    <p>
+      Goal: <span class="saving-goal">{{ savingGoal }} </span>
+    </p>
     <div class="progress-section">
       <ProgressBar :progress="progress" />
       <p class="progress-text">{{ progress }}%</p>
@@ -52,5 +54,9 @@ watch(progress, (newProgress) => {
 img {
   height: 183px;
   width: 275px;
+}
+
+span.saving-goal {
+  font-weight: bold;
 }
 </style>
