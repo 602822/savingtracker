@@ -1,11 +1,11 @@
 <template>
   <div class="progress-container">
-    <div class="progress-bar" :style="{ width: `${props.progress}%` }"></div>
+    <div class="progress-bar" :style="{ width: `${progress}%` }"></div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { defineProps } from "vue";
+import { defineProps, computed } from "vue";
 
 const props = defineProps({
   progress: {
@@ -15,6 +15,10 @@ const props = defineProps({
       return value >= 0 && value <= 100;
     },
   },
+});
+
+const progress = computed(() => {
+  return Math.min(100, Math.max(0, props.progress));
 });
 </script>
 

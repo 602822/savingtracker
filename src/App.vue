@@ -1,7 +1,7 @@
 <template>
   <h1>Saving Tracker</h1>
   <DisplayMoney :moneySavedTotal="moneySavedTotal" />
-  <ConfettiExplosion v-if="showConfetti"></ConfettiExplosion>
+  <ConfettiExplosion :duration="5000" v-if="showConfetti"></ConfettiExplosion>
   <SavingGoal />
   <EditGoalModal @close="showModal = false" v-if="showModal" />
   <p>Money Saved Today:</p>
@@ -27,9 +27,8 @@ const store = useStore();
 
 const saveMoney = () => {
   console.log("Money Saved: ", moneySavedTotal);
-  if (store.state.progress < 100) {
-    store.commit("addMoneySaved", Number(moneySavedToday.value));
-  }
+
+  store.commit("addMoneySaved", Number(moneySavedToday.value));
 };
 </script>
 
