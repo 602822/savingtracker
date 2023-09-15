@@ -20,11 +20,9 @@ const props = defineProps({
 
 <style scoped>
 .progress-container {
-  width: 400px;
+  width: 300px;
   background-color: #f3f3f3;
   border-radius: 4px;
-  display: flex;
-  margin-left: 420px;
   margin-top: 30px;
 }
 

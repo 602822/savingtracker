@@ -3,11 +3,9 @@
     <img v-if="imageUrl" :src="imageUrl" alt="User selected Image" />
     <img v-else src="../assets/noImage.jpg" alt="No image selected" />
     <p>{{ savingGoal }}</p>
-    <div class="progress">
+    <div class="progress-section">
       <ProgressBar :progress="progress" />
-      <div class="precentage">
-        <p>{{ progress }}%</p>
-      </div>
+      <p class="progress-text">{{ progress }}%</p>
     </div>
   </div>
 </template>
@@ -33,13 +31,15 @@ watch([moneySaved, moneyNeeded], calculateProgress);
 </script>
 
 <style scoped>
-.progress {
+.progress-section {
   display: flex;
-  align-items: center;
+  align-items: center; /* Vertically align children if they have different heights */
+  margin-left: 50px;
+  gap: 10px; /* Provides space between children. If 'gap' is not supported in your target browsers, use margin-right on the ProgressBar instead */
 }
 
-.precentage {
-  margin-left: 20px;
-  margin-top: 30px;
+.progress-text {
+  padding-top: 29px;
+  margin: 0; /* Remove default paragraph margins */
 }
 </style>

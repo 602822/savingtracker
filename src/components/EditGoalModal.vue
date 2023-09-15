@@ -79,7 +79,7 @@ const save = () => {
   display: flex;
   flex-direction: column;
   width: 300px;
-  height: 320px;
+  height: 350px;
   position: relative;
 }
 
