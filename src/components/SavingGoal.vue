@@ -36,7 +36,6 @@ watch([moneySaved, moneyNeeded], calculateProgress);
 .progress {
   display: flex;
   align-items: center;
-  margin-left: 300px;
 }
 
 .precentage {
