@@ -1,6 +1,6 @@
 <template>
   <div class="progress-container">
-    <div class="progress-bar" :style="{ width: `${progress}%` }"></div>
+    <div class="progress-bar" :style="{ width: `${props.progress}%` }"></div>
   </div>
 </template>
 

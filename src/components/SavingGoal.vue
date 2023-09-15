@@ -25,6 +25,7 @@ let progress = ref(0);
 
 const calculateProgress = () => {
   progress.value = Math.round((moneySaved.value / moneyNeeded.value) * 100);
+  store.commit("setProgress", progress.value);
 };
 
 watch([moneySaved, moneyNeeded], calculateProgress);

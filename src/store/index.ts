@@ -6,6 +6,7 @@ moneyNeeded : number;
 selectedImageUrl : string;
 moneySaved: number;
 showConfetti: boolean;
+progress: number;
 
 }
 
@@ -14,7 +15,8 @@ const initialState: RootState = {
    moneyNeeded: 0,
    selectedImageUrl: "",
    moneySaved: 0,
-   showConfetti: false
+   showConfetti: false,
+   progress : 0,
  };
 
 const store : Store<RootState> = createStore({
@@ -36,6 +38,10 @@ const store : Store<RootState> = createStore({
 
  showConfetti(state) {
    state.showConfetti = true
+ },
+
+ setProgress(state, newProgress: number) {
+   state.progress = newProgress;
  }
 
 

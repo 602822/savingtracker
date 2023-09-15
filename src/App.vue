@@ -27,7 +27,9 @@ const store = useStore();
 
 const saveMoney = () => {
   console.log("Money Saved: ", moneySavedTotal);
-  store.commit("addMoneySaved", Number(moneySavedToday.value));
+  if (store.state.progress < 100) {
+    store.commit("addMoneySaved", Number(moneySavedToday.value));
+  }
 };
 </script>
 
