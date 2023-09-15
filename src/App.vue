@@ -8,8 +8,10 @@
   <SavingGoal />
   <EditGoalModal @close="showModal = false" v-if="showModal" />
   <p>Money Saved Today:</p>
-  <input v-model="moneySavedToday" />
-  <button @click="saveMoney()">Save</button>
+  <div class="moneySaved">
+    <input v-model="moneySavedToday" />
+    <button @click="saveMoney()">Save</button>
+  </div>
   <button @click="showModal = true">Edit Goal</button>
 </template>
 
@@ -56,6 +58,17 @@ input {
 
 button {
   margin-bottom: 10px;
+  color: white;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  width: 80px;
+  height: 20px;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 img.icon {
@@ -67,5 +80,11 @@ img.icon {
   display: flex;
   align-items: center;
   gap: 15px;
+}
+
+.moneySaved {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 </style>
