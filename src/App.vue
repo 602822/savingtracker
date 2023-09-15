@@ -21,6 +21,7 @@ import ConfettiExplosion from "vue-confetti-explosion";
 const showModal = ref<boolean>(false);
 const moneySavedToday = ref<string | number>("");
 const moneySavedTotal = computed(() => store.state.moneySaved);
+const showConfetti = computed(() => store.state.showConfetti);
 
 const store = useStore();
 

@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref, watch } from "vue";
+import { computed, ref, watch, defineEmits } from "vue";
 import { useStore } from "vuex";
 import ProgressBar from "./ProgressBar.vue";
 
@@ -28,13 +28,19 @@ const calculateProgress = () => {
 };
 
 watch([moneySaved, moneyNeeded], calculateProgress);
+
+watch(progress, (newProgress) => {
+  if (newProgress >= 100) {
+    store.commit("showConfetti");
+  }
+});
 </script>
 
 <style scoped>
 .progress-section {
   display: flex;
   align-items: center; /* Vertically align children if they have different heights */
-  margin-left: 50px;
+
   gap: 10px; /* Provides space between children. If 'gap' is not supported in your target browsers, use margin-right on the ProgressBar instead */
 }
 

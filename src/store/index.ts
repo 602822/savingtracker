@@ -5,15 +5,20 @@ savingGoal : string;
 moneyNeeded : number;
 selectedImageUrl : string;
 moneySaved: number;
+showConfetti: boolean;
+
 }
 
-const store : Store<RootState> = createStore({
-    state: {savingGoal: 'Enter your Saving Goal',
-    moneyNeeded: 0,
-    selectedImageUrl: "",
-    moneySaved: 0,
+const initialState: RootState = {
+   savingGoal: 'Enter your Saving Goal',
+   moneyNeeded: 0,
+   selectedImageUrl: "",
+   moneySaved: 0,
+   showConfetti: false
+ };
 
-},
+const store : Store<RootState> = createStore({
+    state: initialState,
     mutations: {setSavingGoal(state, newGoal:string) {
     state.savingGoal = newGoal
     },
@@ -28,6 +33,13 @@ const store : Store<RootState> = createStore({
  addMoneySaved(state, moneySaved : number) {
     state.moneySaved += moneySaved
  },
+
+ showConfetti(state) {
+   state.showConfetti = true
+ }
+
+
+ 
 
 },
     actions: {},
