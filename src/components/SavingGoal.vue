@@ -52,9 +52,10 @@ const calculateProgress = () => {
   );
 };
 
-watch([moneySaved, moneyNeeded], calculateProgress);
+watch([moneySaved, moneyNeeded], calculateProgress); //if moneySaved or moneyNeeded changes then the method that calculates the progress gets triggerd
 
 watch(progress, (newProgress) => {
+  //checks if the progress changes, if the new progress is equal or greater than 100 the confetti is triggered
   if (newProgress >= 100) {
     store.commit("showConfetti");
   }
