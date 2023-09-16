@@ -1,34 +1,22 @@
-# savingtracker
-You can run the app by cloning the project from github to vscode and use "npm install" and "npm run serve" in the integrated terminal. Make sure you have node and npm
-npm 
+🎯 Saving Tracker
+A simple and intuitive saving tracker built with Vue.js. Track your savings goals and see your progress in real-time.
 
-dependencies:
-npm install vuex
+🚀 Getting Started
+Prerequisites
+Node.js & npm: Before you begin, ensure you have Node.js and npm installed.
 
-
-
-
-
-
-## Project setup
+### Install dependencies
 ```
 npm install
 ```
-
-### Compiles and hot-reloads for development
+### Running the app
 ```
 npm run serve
 ```
+📌 Features
+Intuitive UI: Easy to navigate and visually appealing.
+Real-time Progress Tracking: Monitor your savings in real-time.
+Goals Setting: Set and modify your savings goals whenever you want.
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+📸 Screenshots
+Coming Soon!
