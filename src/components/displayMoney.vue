@@ -6,7 +6,7 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, computed, ref, watch } from "vue";
+import { defineProps, computed } from "vue";
 import { useStore } from "vuex";
 
 const props = defineProps({

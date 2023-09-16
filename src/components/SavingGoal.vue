@@ -13,7 +13,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref, watch, defineEmits } from "vue";
+import { computed, ref, watch } from "vue";
 import { useStore } from "vuex";
 import ProgressBar from "./ProgressBar.vue";
 
@@ -26,7 +26,9 @@ const savingGoal = computed(() => {
     return store.state.savingGoal;
   }
 });
-const imageUrl = computed(() => store.state.selectedImageUrl);
+const imageUrl = computed(
+  () => store.state.selectedImageUrl || localStorage.getItem("imageUrl")
+);
 
 const moneyNeeded = computed(
   () => store.state.moneyNeeded || localStorage.getItem("moneyNeeded" || "0")

@@ -48,6 +48,7 @@ const onImageSelected = (event: Event) => {
       selectedImage.value = e.target?.result as string;
 
       store.commit("setImageUrl", selectedImage.value);
+      localStorage.setItem("imageUrl", selectedImage.value);
     };
 
     reader.readAsDataURL(file);
