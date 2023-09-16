@@ -12,6 +12,7 @@ A simple and intuitive saving tracker built with Vue.js. Track your savings goal
 ---
 
 ## 🔧 Installation & Setup
+You can run the app by cloning the project from github to vscode
 
 1. **Install Dependencies**
     ```bash
