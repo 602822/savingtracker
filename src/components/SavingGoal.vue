@@ -35,10 +35,21 @@ const moneyNeeded = computed(
   () => store.state.moneyNeeded || localStorage.getItem("moneyNeeded" || "0")
 );
 const moneySaved = computed(() => store.state.moneySaved);
-let progress = ref(0);
+
+const progress = computed(
+  () =>
+    store.state.progress || parseInt(localStorage.getItem("progress") || "0")
+);
 
 const calculateProgress = () => {
-  progress.value = Math.round((moneySaved.value / moneyNeeded.value) * 100);
+  store.commit(
+    "setProgress",
+    Math.round((moneySaved.value / moneyNeeded.value) * 100)
+  );
+  localStorage.setItem(
+    "progress",
+    Math.round((moneySaved.value / moneyNeeded.value) * 100).toString()
+  );
 };
 
 watch([moneySaved, moneyNeeded], calculateProgress);
