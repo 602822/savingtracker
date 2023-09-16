@@ -58,6 +58,7 @@ const save = () => {
   store.commit("setSavingGoal", savingGoal);
   store.commit("setMoneyNeeded", moneyNeeded);
   localStorage.setItem("moneyNeeded", moneyNeeded.value.toString());
+  localStorage.setItem("savingGoal", savingGoal.value);
 };
 </script>
 

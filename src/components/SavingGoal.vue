@@ -18,7 +18,14 @@ import { useStore } from "vuex";
 import ProgressBar from "./ProgressBar.vue";
 
 const store = useStore();
-const savingGoal = computed(() => store.state.savingGoal);
+
+const savingGoal = computed(() => {
+  if (store.state.savingGoal === "Enter your Saving Goal") {
+    return localStorage.getItem("savingGoal");
+  } else {
+    return store.state.savingGoal;
+  }
+});
 const imageUrl = computed(() => store.state.selectedImageUrl);
 
 const moneyNeeded = computed(
