@@ -57,7 +57,10 @@ watch([moneySaved, moneyNeeded], calculateProgress); //if moneySaved or moneyNee
 watch(progress, (newProgress) => {
   //checks if the progress changes, if the new progress is equal or greater than 100 the confetti is triggered
   if (newProgress >= 100) {
-    store.commit("showConfetti");
+    store.commit("setShowConfetti", true);
+    setTimeout(() => {
+      store.commit("setShowConfetti", false);
+    }, 5000);
   }
 });
 </script>

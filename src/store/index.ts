@@ -38,8 +38,8 @@ const store : Store<RootState> = createStore({
     state.moneySaved += moneySaved
  },
 
- showConfetti(state) {
-   state.showConfetti = true
+ setShowConfetti(state, newState: boolean) {
+   state.showConfetti = newState
  },
 
  setProgress(state, newProgress : number) {
