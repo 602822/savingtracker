@@ -21,7 +21,9 @@ const store = useStore();
 const savingGoal = computed(() => store.state.savingGoal);
 const imageUrl = computed(() => store.state.selectedImageUrl);
 
-const moneyNeeded = computed(() => store.state.moneyNeeded);
+const moneyNeeded = computed(
+  () => store.state.moneyNeeded || localStorage.getItem("moneyNeeded" || "0")
+);
 const moneySaved = computed(() => store.state.moneySaved);
 let progress = ref(0);
 

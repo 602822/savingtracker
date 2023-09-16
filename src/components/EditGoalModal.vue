@@ -22,7 +22,7 @@ import { ref, defineEmits } from "vue";
 import { useStore } from "vuex";
 
 const savingGoal = ref<string>("");
-const moneyNeeded = ref<string | number>("");
+const moneyNeeded = ref<string | number>(""); //Its initialized as an empty string so the inputfield dont have a 0 in them
 
 const store = useStore();
 
@@ -35,6 +35,7 @@ function closeModal() {
 }
 
 const onImageSelected = (event: Event) => {
+  //Method for getting a image url from file
   const fileInput = event.target as HTMLInputElement;
   const files = fileInput.files;
 
@@ -56,6 +57,7 @@ const onImageSelected = (event: Event) => {
 const save = () => {
   store.commit("setSavingGoal", savingGoal);
   store.commit("setMoneyNeeded", moneyNeeded);
+  localStorage.setItem("moneyNeeded", moneyNeeded.value.toString());
 };
 </script>
 

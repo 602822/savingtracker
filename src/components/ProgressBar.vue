@@ -18,7 +18,7 @@ const props = defineProps({
 });
 
 const progress = computed(() => {
-  return Math.min(100, Math.max(0, props.progress));
+  return Math.min(100, Math.max(0, props.progress)); //so the width of the progressbar is not more then 100
 });
 </script>
 
