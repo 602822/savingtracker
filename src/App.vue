@@ -25,15 +25,17 @@ import ConfettiExplosion from "vue-confetti-explosion";
 
 const showModal = ref<boolean>(false);
 const moneySavedToday = ref<string | number>("");
-const moneySavedTotal = computed(() => store.state.moneySaved);
+const moneySavedTotal = computed(
+  () => store.state.moneySaved || localStorage.getItem("moneySaved")
+);
 const showConfetti = computed(() => store.state.showConfetti);
 
 const store = useStore();
 
 const saveMoney = () => {
   console.log("Money Saved: ", moneySavedTotal);
-
   store.commit("addMoneySaved", Number(moneySavedToday.value));
+  localStorage.setItem("moneySaved", store.state.moneySaved.toString());
 };
 </script>
 

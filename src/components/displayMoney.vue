@@ -1,7 +1,6 @@
 <template>
   <div>
-    <h3 v-if="moneyNeeded">Money needed: {{ moneyNeeded }} Kr</h3>
-    <h3 v-else>Money needed: 0 Kr</h3>
+    <h3>Money needed: {{ moneyNeeded }} Kr</h3>
     <h3>Money saved: {{ props.moneySavedTotal }} Kr</h3>
   </div>
 </template>

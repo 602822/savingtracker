@@ -14,7 +14,7 @@ const initialState: RootState = {
    savingGoal: 'Enter your Saving Goal',
    moneyNeeded: 0,
    selectedImageUrl: "",
-   moneySaved: 0,
+   moneySaved: parseInt(localStorage.getItem("moneySaved") || "0"),
    showConfetti: false,
 
  };
