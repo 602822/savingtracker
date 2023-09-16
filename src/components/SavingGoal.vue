@@ -2,8 +2,11 @@
   <div>
     <img v-if="imageUrl" :src="imageUrl" alt="User selected Image" />
     <img v-else src="../assets/noImage.jpg" alt="No image selected" />
-    <p>
+    <p v-if="savingGoal">
       Goal: <span class="saving-goal">{{ savingGoal }} </span>
+    </p>
+    <p v-else>
+      Goal: <span class="saving-goal"> Enter your saving Goal </span>
     </p>
     <div class="progress-section">
       <ProgressBar :progress="progress" />
