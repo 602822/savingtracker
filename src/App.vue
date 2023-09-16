@@ -11,6 +11,7 @@
   <div class="moneySaved">
     <input v-model="moneySavedToday" />
     <button @click="saveMoney()">Save</button>
+    <button @click="resetMoneySaved()">Reset</button>
   </div>
   <button @click="showModal = true">Edit Goal</button>
 </template>
@@ -36,6 +37,11 @@ const saveMoney = () => {
   console.log("Money Saved: ", moneySavedTotal);
   store.commit("addMoneySaved", Number(moneySavedToday.value));
   localStorage.setItem("moneySaved", store.state.moneySaved.toString());
+};
+
+const resetMoneySaved = () => {
+  store.commit("resetMoneySaved");
+  localStorage.setItem("moneySaved", "0");
 };
 </script>
 

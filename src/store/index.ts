@@ -46,6 +46,10 @@ const store : Store<RootState> = createStore({
    state.progress = newProgress
  },
 
+ resetMoneySaved(state) {
+   state.moneySaved = 0
+ }
+
 
  
 
