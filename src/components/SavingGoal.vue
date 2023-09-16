@@ -69,14 +69,13 @@ watch(progress, (newProgress) => {
 <style scoped>
 .progress-section {
   display: flex;
-  align-items: center; /* Vertically align children if they have different heights */
-
-  gap: 10px; /* Provides space between children. If 'gap' is not supported in your target browsers, use margin-right on the ProgressBar instead */
+  align-items: center;
+  gap: 10px;
 }
 
 .progress-text {
   padding-top: 29px;
-  margin: 0; /* Remove default paragraph margins */
+  margin: 0;
 }
 
 img {
