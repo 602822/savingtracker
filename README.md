@@ -36,4 +36,4 @@ You can run the app by cloning the project from github to vscode
 
 ## 📸 Screenshots
 
-https://github.com/602822/savingtracker/assets/89077126/9489b4b3-7c1c-45d6-9e25-aec850278f8d
+![Saving Tracker Screenshot](https://github.com/602822/savingtracker/assets/89077126/9489b4b3-7c1c-45d6-9e25-aec850278f8d)
