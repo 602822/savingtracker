@@ -59,6 +59,7 @@ watch(progress, (newProgress) => {
   if (newProgress >= 100) {
     store.commit("setShowConfetti", true);
     setTimeout(() => {
+      //sets it back to false so you can trigger it multible times
       store.commit("setShowConfetti", false);
     }, 5000);
   }
