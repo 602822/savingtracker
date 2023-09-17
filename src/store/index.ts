@@ -46,8 +46,12 @@ const store : Store<RootState> = createStore({
    state.progress = newProgress
  },
 
- resetMoneySaved(state) {
+ reset(state) {
    state.moneySaved = 0
+   state.savingGoal = "Enter your Saving Goal";
+   state.moneyNeeded = 0
+   state.selectedImageUrl = ""
+   state.progress = 0
  }
 
 
