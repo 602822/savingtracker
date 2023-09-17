@@ -42,14 +42,19 @@ const progress = computed(
 );
 
 const calculateProgress = () => {
-  store.commit(
-    "setProgress",
-    Math.round((moneySaved.value / moneyNeeded.value) * 100)
-  );
-  localStorage.setItem(
-    "progress",
-    Math.round((moneySaved.value / moneyNeeded.value) * 100).toString()
-  );
+  if (localStorage.getItem("moneyNeeded") === "0") {
+    //Prevents the progress from becoming NAN when i reset
+    store.commit("setProgress", "0");
+  } else {
+    store.commit(
+      "setProgress",
+      Math.round((moneySaved.value / moneyNeeded.value) * 100)
+    );
+    localStorage.setItem(
+      "progress",
+      Math.round((moneySaved.value / moneyNeeded.value) * 100).toString()
+    );
+  }
 };
 
 watch([moneySaved, moneyNeeded], calculateProgress); //if moneySaved or moneyNeeded changes then the method that calculates the progress gets triggerd
