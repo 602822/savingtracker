@@ -52,13 +52,11 @@ const resetMoneySaved = () => {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
   display: flex;
   flex-direction: column; /* Stack children vertically */
   align-items: center; /* Center children horizontally */
   justify-content: center; /* Center children vertically */
   height: 100vh; /* Take the full viewport height */
-  margin-top: 100px;
 }
 input {
   margin-bottom: 10px;
