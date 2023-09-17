@@ -7,7 +7,7 @@
   <ConfettiExplosion :duration="5000" v-if="showConfetti"></ConfettiExplosion>
   <SavingGoal />
   <EditGoalModal @close="showModal = false" v-if="showModal" />
-  <p>Money Saved Today:</p>
+  <p>Money Saved:</p>
   <div class="moneySaved">
     <input v-model="moneySavedToday" />
     <button @click="saveMoney()">Save</button>
