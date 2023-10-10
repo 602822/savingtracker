@@ -26,9 +26,7 @@ import ConfettiExplosion from "vue-confetti-explosion";
 
 const showModal = ref<boolean>(false);
 const moneySavedToday = ref<string | number>("");
-const moneySavedTotal = computed(
-  () => store.state.moneySaved || localStorage.getItem("moneySaved")
-);
+const moneySavedTotal = computed(() => store.state.moneySaved);
 const showConfetti = computed(() => store.state.showConfetti);
 
 const store = useStore();
@@ -36,16 +34,10 @@ const store = useStore();
 const saveMoney = () => {
   console.log("Money Saved: ", moneySavedTotal);
   store.commit("addMoneySaved", Number(moneySavedToday.value));
-  localStorage.setItem("moneySaved", store.state.moneySaved.toString());
 };
 
 const reset = () => {
   store.commit("reset");
-  localStorage.setItem("moneySaved", "0");
-  localStorage.setItem("progress", "0");
-  localStorage.setItem("moneyNeeded", "0");
-  localStorage.setItem("savingGoal", "Enter a saving Goal");
-  localStorage.setItem("imageUrl", "");
 };
 </script>
 

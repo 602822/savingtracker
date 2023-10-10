@@ -48,7 +48,6 @@ const onImageSelected = (event: Event) => {
       selectedImage.value = e.target?.result as string;
 
       store.commit("setImageUrl", selectedImage.value);
-      localStorage.setItem("imageUrl", selectedImage.value);
     };
 
     reader.readAsDataURL(file);
@@ -58,8 +57,6 @@ const onImageSelected = (event: Event) => {
 const save = () => {
   store.commit("setSavingGoal", savingGoal);
   store.commit("setMoneyNeeded", moneyNeeded);
-  localStorage.setItem("moneyNeeded", moneyNeeded.value.toString());
-  localStorage.setItem("savingGoal", savingGoal.value);
 };
 </script>
 

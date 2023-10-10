@@ -14,7 +14,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref, watch } from "vue";
+import { computed, watch } from "vue";
 import { useStore } from "vuex";
 import ProgressBar from "./ProgressBar.vue";
 
@@ -27,19 +27,12 @@ const savingGoal = computed(() => {
     return store.state.savingGoal;
   }
 });
-const imageUrl = computed(
-  () => store.state.selectedImageUrl || localStorage.getItem("imageUrl")
-);
+const imageUrl = computed(() => store.state.selectedImageUrl);
 
-const moneyNeeded = computed(
-  () => store.state.moneyNeeded || localStorage.getItem("moneyNeeded" || "0")
-);
+const moneyNeeded = computed(() => store.state.moneyNeeded);
 const moneySaved = computed(() => store.state.moneySaved);
 
-const progress = computed(
-  () =>
-    store.state.progress || parseInt(localStorage.getItem("progress") || "0")
-);
+const progress = computed(() => store.state.progress);
 
 const calculateProgress = () => {
   if (localStorage.getItem("moneyNeeded") === "0") {
@@ -49,10 +42,6 @@ const calculateProgress = () => {
     store.commit(
       "setProgress",
       Math.round((moneySaved.value / moneyNeeded.value) * 100)
-    );
-    localStorage.setItem(
-      "progress",
-      Math.round((moneySaved.value / moneyNeeded.value) * 100).toString()
     );
   }
 };
