@@ -3,7 +3,7 @@
     <h1>Saving Tracker</h1>
     <img src="./assets/piggyBankIcon.png" alt="piggybankIcon" class="icon" />
   </div>
-  <DisplayMoney :moneySavedTotal="moneySavedTotal" />
+  <DisplayMoney/>
   <ConfettiExplosion :duration="5000" v-if="showConfetti"></ConfettiExplosion>
   <SavingGoal />
   <EditGoalModal @close="showModal = false" v-if="showModal" />
@@ -26,13 +26,12 @@ import ConfettiExplosion from "vue-confetti-explosion";
 
 const showModal = ref<boolean>(false);
 const moneySavedToday = ref<string | number>("");
-const moneySavedTotal = computed(() => store.state.moneySaved);
+
 const showConfetti = computed(() => store.state.showConfetti);
 
 const store = useStore();
 
 const saveMoney = () => {
-  console.log("Money Saved: ", moneySavedTotal);
   store.commit("addMoneySaved", Number(moneySavedToday.value));
 };
 
