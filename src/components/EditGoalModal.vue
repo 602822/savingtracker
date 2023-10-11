@@ -22,7 +22,7 @@ import { ref, defineEmits } from "vue";
 import { useStore } from "vuex";
 
 const savingGoal = ref<string>("");
-const moneyNeeded = ref<string | number>(""); //Its initialized as an empty string so the inputfield dont have a 0 in them
+const moneyNeeded = ref<string>(""); 
 
 const store = useStore();
 
@@ -55,8 +55,12 @@ const onImageSelected = (event: Event) => {
 };
 
 const save = () => {
-  store.commit("setSavingGoal", savingGoal);
-  store.commit("setMoneyNeeded", moneyNeeded);
+  if (moneyNeeded.value !== "") {
+    store.commit("setMoneyNeeded", moneyNeeded);
+  }
+  if (savingGoal.value !== "") {
+    store.commit("setSavingGoal", savingGoal);
+  }
 };
 </script>
 
