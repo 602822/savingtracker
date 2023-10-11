@@ -21,11 +21,7 @@ import ProgressBar from "./ProgressBar.vue";
 const store = useStore();
 
 const savingGoal = computed(() => {
-  if (store.state.savingGoal === "Enter your Saving Goal") {
-    return localStorage.getItem("savingGoal");
-  } else {
-    return store.state.savingGoal;
-  }
+  return store.state.savingGoal;
 });
 const imageUrl = computed(() => store.state.selectedImageUrl);
 
@@ -35,15 +31,10 @@ const moneySaved = computed(() => store.state.moneySaved);
 const progress = computed(() => store.state.progress);
 
 const calculateProgress = () => {
-  if (localStorage.getItem("moneyNeeded") === "0") {
-    //Prevents the progress from becoming NAN when i reset
-    store.commit("setProgress", "0");
-  } else {
-    store.commit(
-      "setProgress",
-      Math.round((moneySaved.value / moneyNeeded.value) * 100)
-    );
-  }
+  store.commit(
+    "setProgress",
+    Math.round((moneySaved.value / moneyNeeded.value) * 100)
+  );
 };
 
 watch([moneySaved, moneyNeeded], calculateProgress); //if moneySaved or moneyNeeded changes then the method that calculates the progress gets triggerd
