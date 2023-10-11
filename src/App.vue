@@ -3,7 +3,7 @@
     <h1>Saving Tracker</h1>
     <img src="./assets/piggyBankIcon.png" alt="piggybankIcon" class="icon" />
   </div>
-  <DisplayMoney/>
+  <DisplayMoney />
   <ConfettiExplosion :duration="5000" v-if="showConfetti"></ConfettiExplosion>
   <SavingGoal />
   <EditGoalModal @close="showModal = false" v-if="showModal" />
